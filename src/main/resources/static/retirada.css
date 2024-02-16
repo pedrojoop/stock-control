@@ -1,0 +1,110 @@
+/* Estilos comuns para a página de retirada */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo da navbar */
+.navbar {
+    background-color: rgb(42, 12, 12);
+    padding: 10px;
+}
+
+.Logo {
+    color: coral;
+    margin-left: 20px;
+}
+
+/* Estilo da sidebar */
+.sidebar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background: #11101d;
+    transition: all 0.5s;
+    z-index: 9999;
+}
+
+.sidebar.close {
+    left: -250px;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.nav-links {
+    padding: 20px 0;
+}
+
+.nav-links li {
+    list-style: none;
+    padding: 15px 20px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #b8860b;
+}
+
+.iocn-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.arrow {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+/* Estilo do título da página */
+.title-big {
+    font-size: 36px;
+    color: #b8860b;
+    margin-bottom: 20px;
+    text-align: center; /* Centraliza o título */
+}
+
+/* Estilo do formulário de retirada */
+.form-container {
+    width: 50%;
+    margin: auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.remove-product-btn {
+    background-color: #2a0c0c;
+    color: #fff; /* Cor do texto */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.remove-product-btn:hover {
+    background-color: #5a2c2c;
+}

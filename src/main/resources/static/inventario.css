@@ -1,0 +1,210 @@
+/* Estilos comuns para a página de inventário */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo da navbar */
+.navbar {
+    background-color: rgb(42, 12, 12);
+    padding: 10px;
+}
+
+.Logo {
+    color: coral;
+    margin-left: 20px;
+}
+
+/* Estilo da sidebar */
+.sidebar {
+    position: fixed;
+    top: 60px; /* Define a posição abaixo da navbar */
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background: #11101d;
+    transition: all 0.5s;
+    z-index: 9999;
+}
+.sidebar.close {
+    left: -250px;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.nav-links {
+    padding: 20px 0;
+}
+
+.nav-links li {
+    list-style: none;
+    padding: 15px 20px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #b8860b;
+}
+
+.iocn-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.arrow {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+/* Estilo do título da página */
+.title-big {
+    font-size: 36px;
+    color: #b8860b;
+    margin-bottom: 20px;
+    margin-left: 650px; /* Adiciona margem à esquerda para alinhar à esquerda */
+}
+
+/* Estilo para a tabela */
+.table-container {
+    overflow-x: auto;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    margin-left: 250px; /* Adiciona margem à esquerda para acomodar a sidebar */
+}
+
+.table {
+    width: 80%; /* Define a largura máxima da tabela */
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #ddd;
+}
+
+/* Estilos para o botão "Adicionar Produto" */
+.add-product-btn {
+    background-color: #2a0c0c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px; /* Adiciona um espaçamento entre o botão e a tabela */
+    cursor: pointer;
+}
+
+.add-product-btn:hover {
+    background-color: #5a2c2c;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    margin-top: 20px; /* Adiciona margem superior */
+}
+
+/* Estilo do modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Estilo do conteúdo do modal */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 20% auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    max-width: 400px;
+  }
+  
+  /* Estilo do botão de fechar */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Estilo do botão Adicionar */
+  .add-product-btn {
+    background-color: #5a2c2c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .add-product-btn:hover {
+    background-color: #000000;
+  }
+  
+  /* Estilo para os campos de formulário */
+  #addProductForm label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  #addProductForm input[type="text"],
+  #addProductForm input[type="date"] {
+    width: calc(100% - 22px);
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Estilo para o botão Adicionar no formulário */
+  #addProductForm button[type="submit"] {
+    background-color: #2a0c0c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  #addProductForm button[type="submit"]:hover {
+    background-color: #5a2c2c;
+  }
+  

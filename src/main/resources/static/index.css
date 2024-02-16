@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #2a0c0c;
+    color: coral;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1; 
+}
+
+.title-big {
+    font-size: 3rem;
+    color: #333;
+}
+
+.text-title {
+    font-size: 1.2rem;
+    color: #555; 
+    margin-bottom: 20px;
+}
+
+.login-big {
+    color: #fff;
+    background-color: #2a0c0c; 
+    padding: 15px 40px; 
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2rem; 
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.login-big:hover {
+    background-color: #5a2c2c; 
+}
+
+.Logo {
+    color: coral;
+}
+
+.login-nav {
+    color: #b8860b;
+    background-color: black;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.mid {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    color: #b8860b;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.text-title {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.mid button {
+    color: #b8860b;
+    background-color: black;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sidebar {
+    position: fixed;
+    top: 60px; 
+    left: 0;
+    bottom: 0;
+    background-color: #292929;
+    transition: all 0.5s ease;
+    z-index: 0; 
+    overflow-y: auto;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center; 
+}
+
+.sidebar.close {
+    width: 150px;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links li a {
+    display: block;
+    color: #99740e;
+    text-decoration: none;
+    padding: 15px 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+    background-color: #434343;
+    color: #fff;
+}
+
+.nav-links li a i {
+    margin-right: 10px;
+}
+
+.arrow {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    color: #ccc;
+    transition: transform 0.3s ease;
+}
+
+.nav-links li.active .arrow {
+    transform: translateY(-50%) rotate(-180deg);
+}
+
+.link_name {
+    margin-left: 10px;
+}
+
+.navbar-container {
+    padding-right: 600px; 
+}
+
+/* Estilo do modal */
+.modal {
+    display: none; /* Oculta o modal por padrão */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo preto semi-transparente */
+}
+
+/* Estilo do conteúdo do modal */
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto; /* Centraliza o modal na página */
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
+}
+
+/* Estilo do botão de fechar */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Estilo do título do modal */
+.modal-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Estilo do formulário dentro do modal */
+.modal-content form {
+    margin-bottom: 20px;
+}
+
+/* Estilo dos campos do formulário */
+.modal-content .form-group label {
+    color: #555;
+}
+
+.modal-content .form-control {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilo do botão de login */
+.modal-content .btn-login {
+    background-color: #2a0c0c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content .btn-login:hover {
+    background-color: #5a2c2c;
+}

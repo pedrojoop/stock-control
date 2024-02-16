@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Define a altura mínima da viewport */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    height: 100%; /* Ajusta a altura para ocupar toda a altura da viewport */
+}
+
+/* Estilo da navbar */
+.navbar {
+    background-color: rgb(42, 12, 12);
+    padding: 10px;
+    z-index: 999;
+}
+
+.Logo {
+    color: coral;
+    margin-left: 20px;
+}
+
+/* Estilo da sidebar */
+.sidebar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    height: calc(100% - 60px);
+    width: 250px;
+    background: #11101d;
+    transition: all 0.5s;
+    z-index: 99;
+    flex: 0 0 250px;
+}
+
+.sidebar.close {
+    left: -250px;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.nav-links {
+    padding: 20px 0;
+}
+
+.nav-links li {
+    list-style: none;
+    padding: 15px 20px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #b8860b;
+}
+
+.iocn-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.arrow {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+/* Estilo do título da página */
+.title-big {
+    font-size: 36px;
+    color: #b8860b;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilo para o contêiner dos gráficos */
+.charts-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding: 0 50px;
+    flex: 1;
+}
+
+/* Estilo para os gráficos */
+.chart {
+    flex: 1;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+}

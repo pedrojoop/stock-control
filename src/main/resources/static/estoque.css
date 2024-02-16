@@ -1,0 +1,240 @@
+/* Estilos comuns para a página de estoque */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo da navbar */
+.navbar {
+    background-color: rgb(42, 12, 12);
+    padding: 10px;
+}
+
+.Logo {
+    color: coral;
+    margin-left: 20px;
+}
+
+.header {
+    text-align: center; /* Centraliza o conteúdo horizontalmente */
+    margin-bottom: 20px; /* Adiciona margem inferior */
+  }
+  
+  .header-title {
+    display: inline-block; /* Permite que o título fique centralizado */
+  }
+
+/* Estilo da sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background: #11101d;
+    transition: all 0.5s;
+    z-index: 9999;
+}
+
+.sidebar.close {
+    left: -250px;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.nav-links {
+    padding: 20px 0;
+}
+
+.nav-links li {
+    list-style: none;
+    padding: 15px 20px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #b8860b;
+}
+
+.iocn-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.arrow {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+/* Estilo do título da página */
+.title-big {
+    font-size: 36px;
+    color: #b8860b;
+    margin-bottom: 20px;
+}
+
+/* Estilo do botão de exportar */
+.export-btn {
+    background-color: #2a0c0c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.export-btn:hover {
+    background-color: #5a2c2c;
+}
+
+/* Estilo para a tabela */
+.table-container {
+    overflow-x: auto;
+    margin-left: 270px; /* Adiciona margem à esquerda para acomodar a sidebar */
+}
+
+.table {
+    width: calc(100% - 270px); /* Define a largura da tabela para ocupar o espaço restante */
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #ddd;
+}
+
+/* Estilo da navbar */
+.navbar {
+    background-color: rgb(42, 12, 12);
+    padding: 10px;
+}
+
+.Logo {
+    color: coral;
+    margin-left: 20px;
+    cursor: pointer; /* Adicionando cursor pointer para indicar que é clicável */
+}
+
+/* Estilo da sidebar */
+.sidebar {
+    position: fixed;
+    top: 60px; /* Ajusta o posicionamento abaixo da navbar */
+    left: -250px; /* Inicia fechada */
+    height: calc(100% - 60px); /* Define a altura da sidebar */
+    width: 250px;
+    background-color: #11101d; /* Cor de fundo da sidebar */
+    transition: all 0.3s ease; /* Adicionando transição suave */
+    z-index: 1000; /* Garantindo que a sidebar fique acima do conteúdo */
+}
+
+.sidebar.close {
+    left: -250px; /* Mantém a sidebar fechada */
+}
+
+.sidebar.open {
+    left: 0; /* Abre a sidebar */
+}
+
+/* Estilo dos itens da sidebar */
+.nav-links {
+    padding-top: 20px; /* Adiciona um espaçamento na parte superior da lista de links */
+}
+
+.nav-links li {
+    list-style: none;
+    padding: 15px 20px;
+    transition: all 0.2s ease; /* Adicionando transição suave nos itens da sidebar */
+}
+
+.nav-links li:hover {
+    background-color: #2a2a47; /* Altera a cor de fundo ao passar o mouse */
+}
+
+.nav-links a {
+    color: #ffffff; /* Cor do texto dos links */
+    text-decoration: none; /* Remove o sublinhado padrão */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+.nav-links a:hover {
+    color: coral; /* Altera a cor do texto ao passar o mouse */
+}
+
+/* Estilo do ícone e do texto dos itens da sidebar */
+.nav-links a i {
+    margin-right: 10px; /* Adiciona um espaçamento à direita do ícone */
+    font-size: 18px; /* Tamanho do ícone */
+}
+
+/* Estilo do texto da navbar quando a sidebar está aberta */
+.sidebar.open .Logo {
+    visibility: hidden; /* Esconde o texto */
+}
+
+/* Estilo do texto da navbar quando a sidebar está fechada */
+.sidebar.close .Logo {
+    visibility: visible; /* Exibe o texto */
+}
+
+
+
+.header-title {
+    text-align: right; /* Alinha o conteúdo à direita */
+}
+
+.title-big {
+    margin: 0; /* Remove a margem padrão */
+    display: inline-block; /* Permite que o botão e o título fiquem na mesma linha */
+}
+
+.export-btn {
+    background-color: #2a0c0c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Adicione estas regras ao seu arquivo CSS */
+
+.export-btn-container {
+  text-align: center; /* Centraliza o conteúdo horizontalmente */
+  margin-top: 20px; /* Adiciona margem superior */
+}
+
+.export-btn {
+    background-color: #2a0c0c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+

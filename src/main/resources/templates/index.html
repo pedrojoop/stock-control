@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stock-control</title>
+    <link rel="stylesheet" type="text/css" href="/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar">
+        <h2 class="Logo">Stock-Control</h2> 
+        <button class="login-nav">Login</button>
+    </nav>
+
+    <div class="mid">
+        <div class="center-welcome">
+            <h1 class="title-big">Controle de Estoque</h1>
+            <p class="text-title">Faça login para acessar seu dashboard de controle de estoque</p>
+            <button class="login-big" id="loginButton">Login</button>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter password">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="sidebar close">
+      
+        <ul class="nav-links">
+        
+          <li>
+            
+            <a href="/dashboard">
+                <i class='bx bx-grid-alt'></i>
+                <span class="link_name">Dashboard</span>
+            </a>
+          </li>
+          
+          
+          <li>
+            <div class="iocn-link">
+                <a href="/estoque"> <!-- Link para a página de estoque -->
+                  <i class='bx bx-book-alt' ></i>
+                  <span class="link_name">Estoque</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow' ></i>
+              </div>
+              <li>
+                <a href="/inventario"> <!-- Link para a página de inventário -->
+                    <i class='bx bx-pie-chart-alt-2'></i>
+                    <span class="link_name">Inventário</span>
+                </a>
+            </li>
+            <li>
+                <a href="/retirada">
+                    <i class="bx bx-pie-chart-alt-2"></i>
+                    <span class="link_name">Retirada</span>
+                </a>
+            </li>
+        </ul>
+      </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+        // Obtém o modal
+        var modal = document.getElementById("myModal");
+
+        // Obtém o botão que abre o modal
+        var btn = document.getElementById("loginButton");
+
+        // Obtém o elemento de fechar do modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // Quando o usuário clicar no botão, abre o modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // Quando o usuário clicar no elemento de fechar, fecha o modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Quando o usuário clicar fora do modal, fecha-o
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Impede o envio padrão do formulário
+
+                const email = document.getElementById('username').value; // Alterado para 'username'
+                const senha = document.getElementById('password').value; // Alterado para 'password'
+
+                // Enviar os dados para o backend
+                fetch('/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        senha: senha
+                    })
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            // Login bem-sucedido, redirecionar para a página de dashboard
+                            window.location.href = '/dashboard';
+                        } else {
+                            // Tratar erro de login
+                            console.error('Erro ao fazer login:', response.statusText);
+                            alert('Erro ao fazer login. Verifique seu email e senha.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Erro ao fazer login:', error);
+                        alert('Erro ao fazer login. Por favor, tente novamente mais tarde.');
+                    });
+            });
+        });
+    </script>
+</body>
+</html>
