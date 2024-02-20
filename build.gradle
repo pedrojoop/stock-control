@@ -1,32 +1,48 @@
 plugins {
-	id 'java'
-	id 'org.springframework.boot' version '3.2.2'
-	id 'io.spring.dependency-management' version '1.1.4'
+    id 'java'
+    id 'org.springframework.boot' version '3.2.2'
+    id 'io.spring.dependency-management' version '1.1.4'
 }
 
 group = 'com.br.stock-control'
 version = '0.0.1-SNAPSHOT'
 
 java {
-	sourceCompatibility = '17'
+    sourceCompatibility = '17'
 }
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-actuator'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.postgresql:postgresql:42.2.23'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'javax.persistence:javax.persistence-api:2.2'
-	implementation 'org.hibernate:hibernate-core:5.6.5.Final'
-	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.postgresql:postgresql:42.2.23'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'javax.persistence:javax.persistence-api:2.2'
+    implementation 'org.hibernate:hibernate-core:5.6.5.Final'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 tasks.named('test') {
-	useJUnitPlatform()
+    useJUnitPlatform()
+}
+
+// Define explicitamente a versão do JDK a ser usada pelo Gradle
+gradle.projectsLoaded {
+    def javaHome = System.getenv("JAVA_HOME")
+    if (javaHome != null && javaHome.trim() != "") {
+        // Defina a versão do JDK
+        toolChains {
+            jdk(javaHome)
+        }
+    } else {
+        // Se JAVA_HOME não estiver definido, use o JDK padrão do sistema
+        toolChains {
+            java8(JavaSpecVersion.toVersion("1.8"))
+        }
+    }
 }

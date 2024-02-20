@@ -25,11 +25,9 @@ public class LoginControllerTest {
 
     @Test
     public void testFazerLoginSucesso() throws Exception {
-        // Mockando o usuário administrativo
         Usuario admin = new Usuario("admin@crsalimentos.com.br", "Admin");
         when(usuarioRepository.findByEmailAndSenha("admin@crsalimentos.com.br", "Admin")).thenReturn(admin);
 
-        // Testando o endpoint de fazer login com credenciais corretas
         mockMvc.perform(MockMvcRequestBuilders.post("/login")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"email\": \"admin@crsalimentos.com.br\", \"senha\": \"Admin\"}"))

@@ -108,3 +108,40 @@ input[type="text"] {
 .remove-product-btn:hover {
     background-color: #5a2c2c;
 }
+
+/* Estilo do formulário de atualização de quantidade de produtos */
+.quantity-update-container {
+    width: 50%;
+    margin: auto;
+}
+
+.quantity-update-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.quantity-update-container label {
+    margin-bottom: 10px;
+}
+
+.quantity-update-container input[type="text"],
+.quantity-update-container input[type="number"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.quantity-update-container .update-quantity-btn {
+    background-color: #2a0c0c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.quantity-update-container .update-quantity-btn:hover {
+    background-color: #5a2c2c;
+}
+

@@ -37,6 +37,11 @@ public class Produto {
         this.valor = valor;
     }
 
+    public Produto(String nome, LocalDate dataDeAdicao) {
+        this.nome = nome;
+        this.dataDeAdicao = dataDeAdicao;
+    }
+
     public Produto() {
 
     }

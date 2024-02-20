@@ -15,7 +15,7 @@ public class UsuarioService {
     }
 
     public Usuario encontrarUsuarioPorEmail(String email) {
-        return usuarioRepository.findByEmail(email); // Implementação do método para encontrar usuário por email
+        return usuarioRepository.findByEmail(email);
     }
 
     public Usuario encontrarUsuarioPorEmailESenha(String email, String senha) {
@@ -28,7 +28,6 @@ public class UsuarioService {
             return null;
         }
 
-        // Crie um novo usuário e salve-o
         Usuario novoUsuario = new Usuario();
         novoUsuario.setEmail(email);
         novoUsuario.setSenha(senha);

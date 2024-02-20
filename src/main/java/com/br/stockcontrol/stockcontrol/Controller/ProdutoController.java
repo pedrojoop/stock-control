@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
 @RestController
@@ -38,20 +39,80 @@ public class ProdutoController {
     }
 
     @DeleteMapping("/{id}")
-    public void removerProduto(@PathVariable String id) {
-        produtoService.removerProduto(id);
+    public ResponseEntity<String> removerProduto(@PathVariable String id) {
+        try {
+            produtoService.removerProdutoPorId(id);
+            return new ResponseEntity<>("Produto removido com sucesso!", HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ResponseEntity<>("Erro ao remover produto: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @PostMapping("/add-product")
     public ResponseEntity<String> adicionarProduto(@RequestBody Produto produto) {
         try {
-            // Salvar o produto no banco de dados
             produtoService.salvarProduto(produto);
             return new ResponseEntity<>("Produto adicionado com sucesso!", HttpStatus.OK);
         } catch (Exception e) {
-            // Log da exceção para identificar a causa do erro
             e.printStackTrace();
             return new ResponseEntity<>("Erro ao adicionar produto: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @GetMapping("/inventario")
+    public List<Produto> listarProdutosInventario() {
+        return produtoService.listarProdutosInventario();
+    }
+
+    @GetMapping("/estoque")
+    public List<Produto> listarProdutosEstoque() {
+        return produtoService.listarProdutosEstoque();
+    }
+
+    @PostMapping("/{nome}/alterar-quantidade")
+    public ResponseEntity<String> alterarQuantidadeProduto(@PathVariable String nome, @RequestParam int novaQuantidade) {
+        try {
+            produtoService.alterarQuantidadeProdutoPorNome(nome, novaQuantidade);
+            return new ResponseEntity<>("Quantidade do produto alterada com sucesso!", HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ResponseEntity<>("Erro ao alterar quantidade do produto: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/quantidade-produtos-proximos-fim")
+    public List<Integer> obterQuantidadeProdutosProximosFim() {
+        List<Integer> quantidadeProdutos = produtoService.obterQuantidadeProdutosProximosFim();
+        return quantidadeProdutos;
+    }
+
+    @GetMapping("/valor-retirado")
+    public List<Integer> obterValorRetirado() {
+        List<Integer> valorRetirado = produtoService.obterValorRetirado();
+        return valorRetirado;
+    }
+
+    @GetMapping("/produtos-nome-quantidade")
+    public ResponseEntity<Map<String, Integer>> listarNomeQuantidadeProdutos() {
+        Map<String, Integer> produtos = produtoService.listarNomeQuantidadeProdutos();
+        return ResponseEntity.ok(produtos);
+    }
+
+    @GetMapping("/produtos-nome-valor")
+    public ResponseEntity<Map<String, Double>> listarNomeValorProdutos() {
+        Map<String, Double> produtos = produtoService.listarNomeValorProdutos();
+        return ResponseEntity.ok(produtos);
+    }
+
+    @PutMapping("/{id}/atualizar-quantidade")
+    public ResponseEntity<Void> atualizarQuantidadeProduto(@PathVariable Long id, @RequestParam int quantidade) {
+        boolean sucesso = produtoService.atualizarQuantidade(id, quantidade);
+        if (sucesso) {
+            return ResponseEntity.ok().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }
+

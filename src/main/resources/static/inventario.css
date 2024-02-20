@@ -207,4 +207,100 @@ tbody tr:hover {
   #addProductForm button[type="submit"]:hover {
     background-color: #5a2c2c;
   }
+
+/* Estilos para o botão "Ações" */
+.action-button {
+    background-color: #4CAF50; /* Verde */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.action-button:hover {
+    background-color: #45a049; /* Verde mais escuro */
+}
+
+/* Estilo do modal de opções */
+#optionsModal {
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente */
+}
+
+#optionsModal .modal-content {
+    background-color: #fefefe; /* Fundo branco */
+    margin: 20% auto; /* Centralizado verticalmente */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75); /* Sombra */
+    max-width: 400px;
+}
+
+#optionsModal .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#optionsModal .close:hover,
+#optionsModal .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo do modal de opções */
+#optionsModal {
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente */
+}
+
+#optionsModal .modal-content {
+    background-color: #fefefe; /* Fundo branco */
+    margin: 20% auto; /* Centralizado verticalmente */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75); /* Sombra */
+    max-width: 400px;
+}
+
+#optionsModal .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#optionsModal .close:hover,
+#optionsModal .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo do botão de ações */
+.actionsButton {
+    background-color: #4CAF50; /* Cor de fundo verde */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.actionsButton:hover {
+    background-color: #45a049; /* Cor de fundo verde mais escura */
+}
+
   

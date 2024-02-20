@@ -22,8 +22,8 @@ public class ProdutoRepository {
                         rs.getString("id"),
                         rs.getString("nome"),
                         rs.getLong("quantidade"),
-                        rs.getDate("data_adicao").toLocalDate(), // Corrigido o nome da coluna
-                        rs.getDate("data_validade").toLocalDate(), // Corrigido o nome da coluna
+                        rs.getDate("data_adicao").toLocalDate(),
+                        rs.getDate("data_validade").toLocalDate(),
                         rs.getDouble("valor")
                 );
                 produtos.add(produto);

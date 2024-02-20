@@ -30,11 +30,9 @@ public class ProdutoControllerTest {
 
     @Test
     public void testListarTodosProdutos() throws Exception {
-        // Mockando o serviço para retornar uma lista de produtos
         Produto produto = new Produto("1", "Produto Teste", 10L, LocalDate.now(), LocalDate.now().plusMonths(1), 50.0);
         when(produtoService.listarTodosProdutos()).thenReturn(Collections.singletonList(produto));
 
-        // Testando o endpoint de listar todos os produtos
         mockMvc.perform(MockMvcRequestBuilders.get("/api/produtos"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))

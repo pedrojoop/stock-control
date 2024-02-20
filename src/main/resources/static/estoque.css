@@ -20,11 +20,11 @@ body {
 .header {
     text-align: center; /* Centraliza o conteúdo horizontalmente */
     margin-bottom: 20px; /* Adiciona margem inferior */
-  }
-  
-  .header-title {
+}
+
+.header-title {
     display: inline-block; /* Permite que o título fique centralizado */
-  }
+}
 
 /* Estilo da sidebar */
 .sidebar {
@@ -89,8 +89,8 @@ body {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    margin-bottom: 20px;
     cursor: pointer;
+    margin-bottom: 20px;
 }
 
 .export-btn:hover {
@@ -201,8 +201,7 @@ tbody tr:hover {
     visibility: visible; /* Exibe o texto */
 }
 
-
-
+/* Estilo do texto do cabeçalho */
 .header-title {
     text-align: right; /* Alinha o conteúdo à direita */
 }
@@ -222,11 +221,23 @@ tbody tr:hover {
     margin-top: 10px;
 }
 
+/* Estilos para o input de pesquisa */
+.search-container {
+    text-align: right; /* Alinha o conteúdo à direita */
+    margin-bottom: 20px; /* Adiciona margem inferior */
+}
+
+#searchInput {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
 /* Adicione estas regras ao seu arquivo CSS */
 
 .export-btn-container {
-  text-align: center; /* Centraliza o conteúdo horizontalmente */
-  margin-top: 20px; /* Adiciona margem superior */
+    text-align: center; /* Centraliza o conteúdo horizontalmente */
+    margin-top: 20px; /* Adiciona margem superior */
 }
 
 .export-btn {
@@ -237,4 +248,3 @@ tbody tr:hover {
     border-radius: 5px;
     cursor: pointer;
 }
-
