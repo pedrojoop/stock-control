@@ -13,7 +13,6 @@ O Stock Control é um sistema de controle de estoque simples desenvolvido em Jav
 ## Requisitos
 - Java 11 ou superior
 - Spring Boot 2.5.5 ou superior
-- Maven 3.6.3 ou superior
 - Banco de dados postgreSQL usando docker 
 
 ## Instalação e Execução
